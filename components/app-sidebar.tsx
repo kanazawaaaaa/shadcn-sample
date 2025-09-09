@@ -17,6 +17,7 @@ import {
   IconSearch,
   IconSettings,
   IconUsers,
+  IconListCheck,
 } from "@tabler/icons-react"
 
 import { NavDocuments } from "@/components/nav-documents"
@@ -41,9 +42,14 @@ const data = {
   },
   navMain: [
     {
+      title: "マイタスク",
+      url: "/contents",
+      icon: IconListCheck,
+    },
+    {
       title: "作品情報",
       url: "/contents",
-      icon: IconDashboard,
+      icon: IconDatabase,
     },
     {
       title: "契約",
@@ -51,9 +57,24 @@ const data = {
       icon: IconListDetails,
     },
     {
-      title: "販売オファー",
+      title: "販売",
+      url: "#",
+      icon: IconDashboard,
+    },
+    {
+      title: "申請",
       url: "#",
       icon: IconFolder,
+    },
+    {
+      title: "配信実績",
+      url: "#",
+      icon: IconChartBar,
+    },
+    {
+      title: "検索",
+      url: "#",
+      icon: IconSearch,
     },
   ],
   navClouds: [
@@ -115,11 +136,6 @@ const data = {
       url: "#",
       icon: IconHelp,
     },
-    {
-      title: "検索",
-      url: "#",
-      icon: IconSearch,
-    },
   ],
   documents: [
     {
@@ -147,7 +163,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <a href="#">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Wands</span>
+                <span className="text-base font-semibold">NTV Wands</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

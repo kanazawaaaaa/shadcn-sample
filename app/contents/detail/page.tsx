@@ -2,6 +2,7 @@ import { AppSidebar } from "@/components/app-sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   Select,
   SelectContent,
@@ -291,40 +292,108 @@ export default function Page() {
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">変更履歴</h3>
                   <div className="space-y-3">
-                    <div className="border rounded-md p-3 bg-muted/50">
+                    <div className="border rounded-md p-3 bg-muted/50 relative">
                       <div className="flex items-center justify-between mb-1">
                         <Badge variant="secondary">作成</Badge>
                         <span className="text-sm text-muted-foreground">2024/4/2 10:00</span>
                       </div>
                       <p className="text-sm font-medium">システム連携</p>
                       <p className="text-sm text-muted-foreground">作品情報が新規作成されました</p>
+                      <div className="mt-3 flex items-end justify-end">
+                        <div className="text-right">
+                          <p className="text-xs text-muted-foreground mb-1">通知されたユーザー</p>
+                          <div className="flex gap-1">
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/tanaka.png" alt="田中 健一" />
+                              <AvatarFallback className="text-xs">田</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/sato.png" alt="佐藤 美咲" />
+                              <AvatarFallback className="text-xs">佐</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/takahashi.png" alt="高橋 拓也" />
+                              <AvatarFallback className="text-xs">高</AvatarFallback>
+                            </Avatar>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="border rounded-md p-3 bg-muted/50">
+                    <div className="border rounded-md p-3 bg-muted/50 relative">
                       <div className="flex items-center justify-between mb-1">
                         <Badge variant="secondary">更新</Badge>
                         <span className="text-sm text-muted-foreground">2024/4/5 15:20</span>
                       </div>
                       <p className="text-sm font-medium">田中 健一</p>
                       <p className="text-sm text-muted-foreground">VAP（サブ担）が設定されました（佐藤 美咲, 高橋 拓也）</p>
+                      <div className="mt-3 flex items-end justify-end">
+                        <div className="text-right">
+                          <p className="text-xs text-muted-foreground mb-1">通知されたユーザー</p>
+                          <div className="flex gap-1">
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/sato.png" alt="佐藤 美咲" />
+                              <AvatarFallback className="text-xs">佐</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/takahashi.png" alt="高橋 拓也" />
+                              <AvatarFallback className="text-xs">高</AvatarFallback>
+                            </Avatar>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="border rounded-md p-3 bg-muted/50">
+                    <div className="border rounded-md p-3 bg-muted/50 relative">
                       <div className="flex items-center justify-between mb-1">
                         <Badge variant="secondary">更新</Badge>
                         <span className="text-sm text-muted-foreground">2024/4/10 13:45</span>
                       </div>
                       <p className="text-sm font-medium">佐藤 美咲</p>
                       <p className="text-sm text-muted-foreground">TADAの配信期間が設定されました（1週間）<br />TVerの配信期間が設定されました（1週間）</p>
+                      <div className="mt-3 flex items-end justify-end">
+                        <div className="text-right">
+                          <p className="text-xs text-muted-foreground mb-1">通知されたユーザー</p>
+                          <div className="flex gap-1">
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/tanaka.png" alt="田中 健一" />
+                              <AvatarFallback className="text-xs">田</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/takahashi.png" alt="高橋 拓也" />
+                              <AvatarFallback className="text-xs">高</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/yamada.png" alt="山田 花子" />
+                              <AvatarFallback className="text-xs">山</AvatarFallback>
+                            </Avatar>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="border rounded-md p-3 bg-muted/50">
+                    <div className="border rounded-md p-3 bg-muted/50 relative">
                       <div className="flex items-center justify-between mb-1">
                         <Badge variant="secondary">更新</Badge>
                         <span className="text-sm text-muted-foreground">2024/4/15 16:30</span>
                       </div>
                       <p className="text-sm font-medium">高橋 拓也</p>
                       <p className="text-sm text-muted-foreground">Huluの配信期間が設定されました（1年間）</p>
+                      <div className="mt-3 flex items-end justify-end">
+                        <div className="text-right">
+                          <p className="text-xs text-muted-foreground mb-1">通知されたユーザー</p>
+                          <div className="flex gap-1">
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/tanaka.png" alt="田中 健一" />
+                              <AvatarFallback className="text-xs">田</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="h-6 w-6">
+                              <AvatarImage src="/avatars/sato.png" alt="佐藤 美咲" />
+                              <AvatarFallback className="text-xs">佐</AvatarFallback>
+                            </Avatar>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -285,6 +285,7 @@ export function DataTable({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
+  const [globalFilter, setGlobalFilter] = React.useState("")
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
@@ -309,12 +310,14 @@ export function DataTable({
       sorting,
       columnVisibility,
       columnFilters,
+      globalFilter,
       pagination,
     },
     getRowId: (row) => row.id.toString(),
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     onColumnVisibilityChange: setColumnVisibility,
+    onGlobalFilterChange: setGlobalFilter,
     onPaginationChange: setPagination,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
@@ -339,7 +342,15 @@ export function DataTable({
     <div className="w-full flex-col justify-start space-y-6">
       {/* フィルターセクションと Add Section ボタンを一列に配置 */}
       <div className="flex items-center justify-between px-4 lg:px-6">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          {/* 検索入力 */}
+          <Input
+            placeholder="番組名、権利者名、担当者で検索..."
+            value={globalFilter ?? ""}
+            onChange={(event) => setGlobalFilter(event.target.value)}
+            className="w-64"
+          />
+          
           {/* 契約種別フィルター */}
           <Select
             value={(table.getColumn("type")?.getFilterValue() as string) ?? ""}
@@ -400,6 +411,7 @@ export function DataTable({
             variant="outline" 
             size="sm"
             onClick={() => {
+              setGlobalFilter("")
               table.getColumn("type")?.setFilterValue("")
               table.getColumn("status")?.setFilterValue("")
               table.getColumn("department")?.setFilterValue("")

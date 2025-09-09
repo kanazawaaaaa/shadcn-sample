@@ -42,12 +42,12 @@ const data = {
   navMain: [
     {
       title: "作品情報",
-      url: "#",
+      url: "/contents",
       icon: IconDashboard,
     },
     {
       title: "契約",
-      url: "#",
+      url: "/contract",
       icon: IconListDetails,
     },
     {

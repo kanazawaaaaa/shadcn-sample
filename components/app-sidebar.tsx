@@ -35,35 +35,25 @@ import {
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "金澤 裕",
+    email: "ykanazawa@ntv-wands.co.jp",
+    avatar: "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png",
   },
   navMain: [
     {
-      title: "Dashboard",
+      title: "作品情報",
       url: "#",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
+      title: "契約",
       url: "#",
       icon: IconListDetails,
     },
     {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "Projects",
+      title: "販売オファー",
       url: "#",
       icon: IconFolder,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
     },
   ],
   navClouds: [
@@ -116,36 +106,31 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Settings",
+      title: "設定",
       url: "#",
       icon: IconSettings,
     },
     {
-      title: "Get Help",
+      title: "ヘルプ",
       url: "#",
       icon: IconHelp,
     },
     {
-      title: "Search",
+      title: "検索",
       url: "#",
       icon: IconSearch,
     },
   ],
   documents: [
     {
-      name: "Data Library",
+      name: "ユーザー",
       url: "#",
-      icon: IconDatabase,
+      icon: IconUsers,
     },
     {
-      name: "Reports",
+      name: "権限",
       url: "#",
       icon: IconReport,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: IconFileWord,
     },
   ],
 }
@@ -162,7 +147,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <a href="#">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">Wands</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

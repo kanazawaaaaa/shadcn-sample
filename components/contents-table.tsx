@@ -159,9 +159,7 @@ export function ContentsTable() {
                 </Link>
               </TableCell>
               <TableCell>
-                <Badge variant={getStatusBadgeVariant(item.simultaneousStreaming)}>
-                  {item.simultaneousStreaming}
-                </Badge>
+                <span className="text-sm">{item.simultaneousStreaming}</span>
               </TableCell>
               <TableCell>
                 <span className="text-sm">{item.tada}</span>

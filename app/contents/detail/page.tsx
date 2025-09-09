@@ -257,17 +257,23 @@ export default function Page() {
                   </div>
                   
                   <div className="space-y-3">
+                  <div className="relative">
                     <textarea 
                       placeholder="コメント"
                       rows={3}
-                      className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 pr-20 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     />
-                    <div className="flex justify-end">
-                      <Button type="button">送信</Button>
-                    </div>
+                    <Button 
+                      type="button" 
+                      size="sm"
+                      className="absolute bottom-2 right-2"
+                    >
+                      送信
+                    </Button>
+                  </div>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">変更履歴</h3>
                   <div className="space-y-3">

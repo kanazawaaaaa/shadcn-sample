@@ -69,8 +69,9 @@ export default function Page() {
                 <h2 className="text-2xl font-bold">バラエティ E</h2>
                 
                 <Tabs defaultValue="basic-info" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
+                  <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="basic-info">基本情報</TabsTrigger>
+                    <TabsTrigger value="meta-info">メタ情報</TabsTrigger>
                     <TabsTrigger value="cast">キャスト表</TabsTrigger>
                   </TabsList>
                   
@@ -399,13 +400,12 @@ export default function Page() {
                 </div>
               </TabsContent>
               
-              <TabsContent value="cast" className="space-y-6">
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">キャスト表</h3>
-                  <div className="text-center text-muted-foreground py-8">
-                    <p>キャスト情報はまだ登録されていません。</p>
-                  </div>
-                </div>
+              <TabsContent value="meta-info" className="space-y-6 pt-6">
+                メタ情報
+              </TabsContent>
+              
+              <TabsContent value="cast" className="space-y-6 pt-6">
+                キャスト情報
               </TabsContent>
             </Tabs>
               </div>

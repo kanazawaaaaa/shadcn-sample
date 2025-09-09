@@ -73,7 +73,7 @@ export default function Page() {
                     <TabsTrigger value="cast">キャスト表</TabsTrigger>
                   </TabsList>
                   
-                  <TabsContent value="basic-info" className="space-y-6">
+                  <TabsContent value="basic-info" className="space-y-6 pt-6">
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">放送・配信日</label>
@@ -225,6 +225,13 @@ export default function Page() {
                   />
                 </div>
 
+                {/* 保存ボタン */}
+                <div className="flex justify-center">
+                  <Button className="min-w-[120px]">
+                    保存
+                  </Button>
+                </div>
+
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">コメント</h3>
                   <div className="space-y-3">
@@ -289,8 +296,8 @@ export default function Page() {
                         <Badge variant="secondary">作成</Badge>
                         <span className="text-sm text-muted-foreground">2024/4/2 10:00</span>
                       </div>
-                      <p className="text-sm font-medium">鈴木 雄太</p>
-                      <p className="text-sm text-muted-foreground">作品情報を新規作成しました</p>
+                      <p className="text-sm font-medium">システム連携</p>
+                      <p className="text-sm text-muted-foreground">作品情報が新規作成されました</p>
                     </div>
                     
                     <div className="border rounded-md p-3 bg-muted/50">
@@ -299,7 +306,7 @@ export default function Page() {
                         <span className="text-sm text-muted-foreground">2024/4/5 15:20</span>
                       </div>
                       <p className="text-sm font-medium">田中 健一</p>
-                      <p className="text-sm text-muted-foreground">放送時間を変更しました（23:59-24:24 → 24:04-24:29）</p>
+                      <p className="text-sm text-muted-foreground">VAP（サブ担）が設定されました（佐藤 美咲, 高橋 拓也）</p>
                     </div>
                     
                     <div className="border rounded-md p-3 bg-muted/50">
@@ -308,7 +315,7 @@ export default function Page() {
                         <span className="text-sm text-muted-foreground">2024/4/10 13:45</span>
                       </div>
                       <p className="text-sm font-medium">佐藤 美咲</p>
-                      <p className="text-sm text-muted-foreground">配信プラットフォーム情報を更新しました</p>
+                      <p className="text-sm text-muted-foreground">TADAの配信期間が設定されました（1週間）<br />TVerの配信期間が設定されました（1週間）</p>
                     </div>
                     
                     <div className="border rounded-md p-3 bg-muted/50">
@@ -317,7 +324,7 @@ export default function Page() {
                         <span className="text-sm text-muted-foreground">2024/4/15 16:30</span>
                       </div>
                       <p className="text-sm font-medium">高橋 拓也</p>
-                      <p className="text-sm text-muted-foreground">番組制作スタッフ情報を追加しました</p>
+                      <p className="text-sm text-muted-foreground">Huluの配信期間が設定されました（1年間）</p>
                     </div>
                   </div>
                 </div>

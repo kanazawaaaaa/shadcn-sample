@@ -218,107 +218,96 @@ export default function Page() {
                   />
                 </div>
 
-                <Tabs defaultValue="comments" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="comments">コメント</TabsTrigger>
-                    <TabsTrigger value="history">変更履歴</TabsTrigger>
-                  </TabsList>
-                  
-                  <TabsContent value="comments" className="space-y-4">
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-semibold">コメント</h3>
-                      <div className="space-y-3">
-                        <div className="border rounded-md p-3 bg-muted/50">
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center space-x-2">
-                              <Badge variant="outline">田中 健一</Badge>
-                              <span className="text-sm text-muted-foreground">2024/4/15 14:30</span>
-                            </div>
-                          </div>
-                          <p className="text-sm">TVerの配信ページ確認：「バラエティ E」のシリーズ内に「バラエティ E DEEP」という枠を作成する？それとも「バラエティ E」と別ページにする？
-                            同一ページにするなら、合体サムネを作っていただくのがベターかも。<br />
-                            ・お気に入り登録が一緒になる、ユーザから見るとわかりやすい<br />
-                            ・ランキングでどちらかしか掲載されない<br />
-                          </p>
-                        </div>
-                        
-                        <div className="border rounded-md p-3 bg-muted/50">
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center space-x-2">
-                              <Badge variant="outline">佐藤 美咲</Badge>
-                              <span className="text-sm text-muted-foreground">2024/4/16 09:15</span>
-                            </div>
-                          </div>
-                          <p className="text-sm">1シリーズにまとめる想定で番組へ最終確認中（シリーズサムネの作成も併せて相談中）</p>
-                        </div>
-                        
-                        <div className="border rounded-md p-3 bg-muted/50">
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center space-x-2">
-                              <Badge variant="outline">山田 花子</Badge>
-                              <span className="text-sm text-muted-foreground">2024/4/17 11:45</span>
-                            </div>
-                          </div>
-                          <p className="text-sm">↑で確定しました</p>
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">コメント</h3>
+                  <div className="space-y-3">
+                    <div className="border rounded-md p-3 bg-muted/50">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center space-x-2">
+                          <Badge variant="outline">田中 健一</Badge>
+                          <span className="text-sm text-muted-foreground">2024/4/15 14:30</span>
                         </div>
                       </div>
-                      
-                      <div className="space-y-3">
-                        <textarea 
-                          placeholder="コメント"
-                          rows={3}
-                          className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        />
-                        <div className="flex justify-end">
-                          <Button type="button">送信</Button>
-                        </div>
-                      </div>
+                      <p className="text-sm">TVerの配信ページ確認：「バラエティ E」のシリーズ内に「バラエティ E DEEP」という枠を作成する？それとも「バラエティ E」と別ページにする？
+                        同一ページにするなら、合体サムネを作っていただくのがベターかも。<br />
+                        ・お気に入り登録が一緒になる、ユーザから見るとわかりやすい<br />
+                        ・ランキングでどちらかしか掲載されない<br />
+                      </p>
                     </div>
-                  </TabsContent>
-                  
-                  <TabsContent value="history" className="space-y-4">
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-semibold">変更履歴</h3>
-                      <div className="space-y-3">
-                        <div className="border rounded-md p-3 bg-muted/50">
-                          <div className="flex items-center justify-between mb-1">
-                            <Badge variant="secondary">作成</Badge>
-                            <span className="text-sm text-muted-foreground">2024/4/2 10:00</span>
-                          </div>
-                          <p className="text-sm font-medium">鈴木 雄太</p>
-                          <p className="text-sm text-muted-foreground">作品情報を新規作成しました</p>
-                        </div>
-                        
-                        <div className="border rounded-md p-3 bg-muted/50">
-                          <div className="flex items-center justify-between mb-1">
-                            <Badge variant="secondary">更新</Badge>
-                            <span className="text-sm text-muted-foreground">2024/4/5 15:20</span>
-                          </div>
-                          <p className="text-sm font-medium">田中 健一</p>
-                          <p className="text-sm text-muted-foreground">放送時間を変更しました（23:59-24:24 → 24:04-24:29）</p>
-                        </div>
-                        
-                        <div className="border rounded-md p-3 bg-muted/50">
-                          <div className="flex items-center justify-between mb-1">
-                            <Badge variant="secondary">更新</Badge>
-                            <span className="text-sm text-muted-foreground">2024/4/10 13:45</span>
-                          </div>
-                          <p className="text-sm font-medium">佐藤 美咲</p>
-                          <p className="text-sm text-muted-foreground">配信プラットフォーム情報を更新しました</p>
-                        </div>
-                        
-                        <div className="border rounded-md p-3 bg-muted/50">
-                          <div className="flex items-center justify-between mb-1">
-                            <Badge variant="secondary">更新</Badge>
-                            <span className="text-sm text-muted-foreground">2024/4/15 16:30</span>
-                          </div>
-                          <p className="text-sm font-medium">高橋 拓也</p>
-                          <p className="text-sm text-muted-foreground">番組制作スタッフ情報を追加しました</p>
+                    
+                    <div className="border rounded-md p-3 bg-muted/50">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center space-x-2">
+                          <Badge variant="outline">佐藤 美咲</Badge>
+                          <span className="text-sm text-muted-foreground">2024/4/16 09:15</span>
                         </div>
                       </div>
+                      <p className="text-sm">1シリーズにまとめる想定で番組へ最終確認中（シリーズサムネの作成も併せて相談中）</p>
                     </div>
-                  </TabsContent>
-                </Tabs>
+                    
+                    <div className="border rounded-md p-3 bg-muted/50">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center space-x-2">
+                          <Badge variant="outline">山田 花子</Badge>
+                          <span className="text-sm text-muted-foreground">2024/4/17 11:45</span>
+                        </div>
+                      </div>
+                      <p className="text-sm">↑で確定しました</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <textarea 
+                      placeholder="コメント"
+                      rows={3}
+                      className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    />
+                    <div className="flex justify-end">
+                      <Button type="button">送信</Button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">変更履歴</h3>
+                  <div className="space-y-3">
+                    <div className="border rounded-md p-3 bg-muted/50">
+                      <div className="flex items-center justify-between mb-1">
+                        <Badge variant="secondary">作成</Badge>
+                        <span className="text-sm text-muted-foreground">2024/4/2 10:00</span>
+                      </div>
+                      <p className="text-sm font-medium">鈴木 雄太</p>
+                      <p className="text-sm text-muted-foreground">作品情報を新規作成しました</p>
+                    </div>
+                    
+                    <div className="border rounded-md p-3 bg-muted/50">
+                      <div className="flex items-center justify-between mb-1">
+                        <Badge variant="secondary">更新</Badge>
+                        <span className="text-sm text-muted-foreground">2024/4/5 15:20</span>
+                      </div>
+                      <p className="text-sm font-medium">田中 健一</p>
+                      <p className="text-sm text-muted-foreground">放送時間を変更しました（23:59-24:24 → 24:04-24:29）</p>
+                    </div>
+                    
+                    <div className="border rounded-md p-3 bg-muted/50">
+                      <div className="flex items-center justify-between mb-1">
+                        <Badge variant="secondary">更新</Badge>
+                        <span className="text-sm text-muted-foreground">2024/4/10 13:45</span>
+                      </div>
+                      <p className="text-sm font-medium">佐藤 美咲</p>
+                      <p className="text-sm text-muted-foreground">配信プラットフォーム情報を更新しました</p>
+                    </div>
+                    
+                    <div className="border rounded-md p-3 bg-muted/50">
+                      <div className="flex items-center justify-between mb-1">
+                        <Badge variant="secondary">更新</Badge>
+                        <span className="text-sm text-muted-foreground">2024/4/15 16:30</span>
+                      </div>
+                      <p className="text-sm font-medium">高橋 拓也</p>
+                      <p className="text-sm text-muted-foreground">番組制作スタッフ情報を追加しました</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

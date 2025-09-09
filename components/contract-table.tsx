@@ -62,7 +62,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
   Drawer,
   DrawerClose,
@@ -118,32 +117,6 @@ export const schema = z.object({
 })
 
 const columns: ColumnDef<z.infer<typeof schema>>[] = [
-  {
-    id: "select",
-    header: ({ table }) => (
-      <div className="flex items-center justify-center">
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
-        />
-      </div>
-    ),
-    cell: ({ row }) => (
-      <div className="flex items-center justify-center">
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
-      </div>
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
   {
     accessorKey: "header",
     header: "Header",
@@ -318,7 +291,6 @@ export function DataTable({
   data: z.infer<typeof schema>[]
 }) {
   const [data, setData] = React.useState(() => initialData)
-  const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -347,13 +319,10 @@ export function DataTable({
     state: {
       sorting,
       columnVisibility,
-      rowSelection,
       columnFilters,
       pagination,
     },
     getRowId: (row) => row.id.toString(),
-    enableRowSelection: true,
-    onRowSelectionChange: setRowSelection,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     onColumnVisibilityChange: setColumnVisibility,

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
   Table,
   TableBody,
@@ -152,7 +153,14 @@ export function ContentsTable() {
         <TableBody>
           {dummyData.map((item) => (
             <TableRow key={item.id}>
-              <TableCell className="font-medium">{item.title}</TableCell>
+              <TableCell className="font-medium">
+                <Link 
+                  href={`/contents/detail?id=${item.id}`}
+                  className="hover:text-primary hover:underline"
+                >
+                  {item.title}
+                </Link>
+              </TableCell>
               <TableCell>
                 <Badge variant={item.performerProcessing ? "default" : "outline"}>
                   {item.performerProcessing ? "有" : "無"}

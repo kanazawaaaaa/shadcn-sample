@@ -34,6 +34,7 @@ type ClearanceSnapshot = {
 
 // --- Prefilled JSON (from your sample) ---
 const prefilled = {
+  title: "ドラマ「未来への道」配信許諾契約",
   grant_id: "GR-2025-01234",
   contract_id: "CT-2025-04567",
   scope: "season" as const,
@@ -101,52 +102,27 @@ export function LicenseGrant() {
 
   const drmOptions = ["Widevine", "PlayReady", "FairPlay"] as const;
 
-  const savePayload = React.useMemo(() => JSON.stringify(form, null, 2), [form]);
-
   return (
     <div className="min-h-screen w-full bg-gradient-to-b  p-6">
       <div>
         <div className="mx-auto max-w-6xl space-y-6">
           <header className="flex items-start justify-between gap-4">
             <div>
-              <h1 className="text-2xl font-bold tracking-tight">LicenseGrant（配信）入力モック</h1>
-              <p className="text-sm text-muted-foreground">Hulu / Netflix 等のOTT向け権利許諾 — プリフィル済み</p>
+              <h1 className="text-2xl font-bold tracking-tight">配信許諾契約サンプル</h1>
+              <p className="text-sm text-muted-foreground">契約種別ごとに入力項目の変更をする等は柔軟に対応可能</p>
             </div>
-            <Button className="gap-2"><Save className="h-4 w-4"/> 保存（ダミー）</Button>
+            <Button className="gap-2"><Save className="h-4 w-4"/> 保存</Button>
           </header>
 
           <Card className="shadow-sm">
             <CardHeader>
               <CardTitle className="flex items-center gap-2"><Film className="h-5 w-5"/> 基本情報</CardTitle>
-              <CardDescription>契約/紐付け情報と範囲（スコープ）</CardDescription>
+              <CardDescription>サンプル</CardDescription>
             </CardHeader>
-            <CardContent className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <CardContent className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="grant_id">Grant ID</Label>
-                <Input id="grant_id" value={form.grant_id} onChange={(e)=>setForm({...form, grant_id:e.target.value})} />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="contract_id">Contract ID</Label>
-                <Input id="contract_id" value={form.contract_id} onChange={(e)=>setForm({...form, contract_id:e.target.value})} />
-              </div>
-              <div className="space-y-2">
-                <Label>Scope</Label>
-                <Select value={form.scope} onValueChange={(v)=>setForm({...form, scope: v as any})}>
-                  <SelectTrigger><SelectValue placeholder="scope"/></SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="work">work</SelectItem>
-                    <SelectItem value="season">season</SelectItem>
-                    <SelectItem value="episode">episode</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="work_id">Work ID</Label>
-                <Input id="work_id" value={form.work_id} onChange={(e)=>setForm({...form, work_id:e.target.value})} />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="season_no">Season No.</Label>
-                <Input id="season_no" type="number" value={form.season_no} onChange={(e)=>setForm({...form, season_no:Number(e.target.value)})} />
+                <Label htmlFor="title">タイトル</Label>
+                <Input id="title" value={form.title} onChange={(e)=>setForm({...form, title: e.target.value})} />
               </div>
               <div className="space-y-2">
                 <Label>配信形態</Label>
@@ -390,16 +366,6 @@ export function LicenseGrant() {
               </CardContent>
             </Card>
           </div>
-
-          <Card className="shadow-sm">
-            <CardHeader>
-              <CardTitle>JSON プレビュー</CardTitle>
-              <CardDescription>現在の入力内容を JSON として確認</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <pre className="max-h-80 overflow-auto rounded-xl bg-slate-950 p-4 text-xs text-slate-50 shadow-inner">{savePayload}</pre>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -15,11 +15,11 @@ import { Badge } from "@/components/ui/badge"
 interface ContentsData {
   id: number
   title: string
-  performerProcessing: boolean
+  simultaneousStreaming: string
+  tada: string
+  tver: string
+  hulu: string
   castListStatus: string
-  oldJohnnyStatus: boolean
-  armaApplicationStatus: string
-  contributionRateStatus: string
 }
 
 // ダミーデータ
@@ -27,92 +27,92 @@ const dummyData: ContentsData[] = [
   {
     id: 1,
     title: "ドラマシリーズ A",
-    performerProcessing: true,
-    castListStatus: "完了",
-    oldJohnnyStatus: true,
-    armaApplicationStatus: "申請中",
-    contributionRateStatus: "作成済み"
+    simultaneousStreaming: "配信中",
+    tada: "24/4/1OA分～",
+    tver: "24/4/1OA分～",
+    hulu: "無し",
+    castListStatus: "完了"
   },
   {
     id: 2,
     title: "ドラマシリーズ B",
-    performerProcessing: false,
-    castListStatus: "進行中",
-    oldJohnnyStatus: false,
-    armaApplicationStatus: "未申請",
-    contributionRateStatus: "未作成"
+    simultaneousStreaming: "ー",
+    tada: "1週間",
+    tver: "1週間",
+    hulu: "1年間",
+    castListStatus: "完了"
   },
   {
     id: 3,
     title: "ドラマシリーズ C",
-    performerProcessing: true,
-    castListStatus: "完了",
-    oldJohnnyStatus: false,
-    armaApplicationStatus: "承認済み",
-    contributionRateStatus: "作成中"
+    simultaneousStreaming: "ー",
+    tada: "1週間",
+    tver: "1週間",
+    hulu: "1年間",
+    castListStatus: "完了"
   },
   {
     id: 4,
     title: "ドラマシリーズ D",
-    performerProcessing: false,
-    castListStatus: "未開始",
-    oldJohnnyStatus: true,
-    armaApplicationStatus: "申請中",
-    contributionRateStatus: "作成済み"
+    simultaneousStreaming: "有",
+    tada: "1週間",
+    tver: "1週間",
+    hulu: "1年間",
+    castListStatus: "完了"
   },
   {
     id: 5,
     title: "バラエティ E",
-    performerProcessing: true,
-    castListStatus: "進行中",
-    oldJohnnyStatus: false,
-    armaApplicationStatus: "承認済み",
-    contributionRateStatus: "未作成"
+    simultaneousStreaming: "ー",
+    tada: "1週間",
+    tver: "1週間",
+    hulu: "1年間",
+    castListStatus: "対応中"
   },
   {
     id: 6,
     title: "バラエティ F",
-    performerProcessing: true,
-    castListStatus: "完了",
-    oldJohnnyStatus: true,
-    armaApplicationStatus: "未申請",
-    contributionRateStatus: "作成中"
+    simultaneousStreaming: "ー",
+    tada: "#1:据え置き #2以降:4週間",
+    tver: "#1:据え置き #2以降:4週間",
+    hulu: "無期限",
+    castListStatus: "対応中"
   },
   {
     id: 7,
     title: "バラエティ G",
-    performerProcessing: false,
-    castListStatus: "進行中",
-    oldJohnnyStatus: true,
-    armaApplicationStatus: "申請中",
-    contributionRateStatus: "作成済み"
+    simultaneousStreaming: "ー",
+    tada: "1週間",
+    tver: "1週間",
+    hulu: "1年間",
+    castListStatus: "ー"
   },
   {
     id: 8,
     title: "バラエティ H",
-    performerProcessing: true,
-    castListStatus: "完了",
-    oldJohnnyStatus: false,
-    armaApplicationStatus: "承認済み",
-    contributionRateStatus: "作成済み"
+    simultaneousStreaming: "有",
+    tada: "1週間",
+    tver: "1週間",
+    hulu: "1年間",
+    castListStatus: "完了"
   },
   {
     id: 9,
     title: "音楽番組 I",
-    performerProcessing: false,
-    castListStatus: "未開始",
-    oldJohnnyStatus: true,
-    armaApplicationStatus: "未申請",
-    contributionRateStatus: "未作成"
+    simultaneousStreaming: "ー",
+    tada: "見逃し配信(OA後-次回放送開始前迄)",
+    tver: "見逃し配信(OA後-次回放送開始前迄)",
+    hulu: "ー",
+    castListStatus: "ー"
   },
   {
     id: 10,
     title: "スポーツ番組 J",
-    performerProcessing: true,
-    castListStatus: "進行中",
-    oldJohnnyStatus: false,
-    armaApplicationStatus: "申請中",
-    contributionRateStatus: "作成中"
+    simultaneousStreaming: "ー",
+    tada: "見逃し配信(OA後-次回放送開始前迄)",
+    tver: "見逃し配信(OA後-次回放送開始前迄)",
+    hulu: "ー",
+    castListStatus: "ー"
   }
 ]
 
@@ -120,16 +120,13 @@ const dummyData: ContentsData[] = [
 const getStatusBadgeVariant = (status: string) => {
   switch (status) {
     case "完了":
-    case "承認済み":
-    case "作成済み":
+    case "配信中":
+    case "有":
       return "default" as const
-    case "進行中":
-    case "申請中":
-    case "作成中":
+    case "対応中":
       return "secondary" as const
-    case "未開始":
-    case "未申請":
-    case "未作成":
+    case "ー":
+    case "無し":
       return "outline" as const
     default:
       return "outline" as const
@@ -143,11 +140,11 @@ export function ContentsTable() {
         <TableHeader className="bg-muted sticky top-0 z-10">
           <TableRow>
             <TableHead>タイトル</TableHead>
-            <TableHead>実演家処理</TableHead>
+            <TableHead>同時配信</TableHead>
+            <TableHead>TADA</TableHead>
+            <TableHead>TVer</TableHead>
+            <TableHead>Hulu</TableHead>
             <TableHead>キャスト表</TableHead>
-            <TableHead>旧ジャニーズ</TableHead>
-            <TableHead>aRma申請</TableHead>
-            <TableHead>寄与率</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -162,28 +159,22 @@ export function ContentsTable() {
                 </Link>
               </TableCell>
               <TableCell>
-                <Badge variant={item.performerProcessing ? "default" : "outline"}>
-                  {item.performerProcessing ? "有" : "無"}
+                <Badge variant={getStatusBadgeVariant(item.simultaneousStreaming)}>
+                  {item.simultaneousStreaming}
                 </Badge>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm">{item.tada}</span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm">{item.tver}</span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm">{item.hulu}</span>
               </TableCell>
               <TableCell>
                 <Badge variant={getStatusBadgeVariant(item.castListStatus)}>
                   {item.castListStatus}
-                </Badge>
-              </TableCell>
-              <TableCell>
-                <Badge variant={item.oldJohnnyStatus ? "default" : "outline"}>
-                  {item.oldJohnnyStatus ? "有" : "無"}
-                </Badge>
-              </TableCell>
-              <TableCell>
-                <Badge variant={getStatusBadgeVariant(item.armaApplicationStatus)}>
-                  {item.armaApplicationStatus}
-                </Badge>
-              </TableCell>
-              <TableCell>
-                <Badge variant={getStatusBadgeVariant(item.contributionRateStatus)}>
-                  {item.contributionRateStatus}
                 </Badge>
               </TableCell>
             </TableRow>

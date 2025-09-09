@@ -35,8 +35,8 @@ import {
 
 const data = {
   user: {
-    name: "金澤 裕",
-    email: "ykanazawa@ntv-wands.co.jp",
+    name: "横山健太",
+    email: "kyokoyama@example.com",
     avatar: "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png",
   },
   navMain: [

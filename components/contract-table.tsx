@@ -207,7 +207,9 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     header: "担当部署",
     cell: ({ row }) => (
       <div>
-        {row.original.department}
+        <Badge variant="outline" className="text-muted-foreground px-1.5">
+          {row.original.department}
+        </Badge>
       </div>
     ),
   },

@@ -43,7 +43,7 @@ const data = {
   navMain: [
     {
       title: "マイタスク",
-      url: "/contents",
+      url: "/",
       icon: IconListCheck,
     },
     {

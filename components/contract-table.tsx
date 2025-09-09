@@ -336,16 +336,6 @@ export function DataTable({
 
   return (
     <div className="w-full flex-col justify-start space-y-6">
-
-      <div className="flex items-center justify-between px-4 lg:px-6">
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm">
-            <IconPlus />
-            <span className="hidden lg:inline">Add Section</span>
-          </Button>
-        </div>
-      </div>
-      
       {/* フィルターセクション */}
       <div className="flex items-center gap-4 px-4 lg:px-6">
         {/* 契約種別フィルター */}
@@ -417,6 +407,17 @@ export function DataTable({
         </Button>
       </div>
 
+      {/* 新規作成 */}
+      <div className="flex items-center justify-between px-4 lg:px-6">
+        <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm">
+            <IconPlus />
+            <span className="hidden lg:inline">Add Section</span>
+          </Button>
+        </div>
+      </div>
+      
+
       <div className="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6">
         <div className="overflow-hidden rounded-lg border">
           <DndContext
@@ -469,11 +470,7 @@ export function DataTable({
             </Table>
           </DndContext>
         </div>
-        <div className="flex items-center justify-between px-4">
-          <div className="text-muted-foreground hidden flex-1 text-sm lg:flex">
-            {table.getFilteredSelectedRowModel().rows.length} of{" "}
-            {table.getFilteredRowModel().rows.length} row(s) selected.
-          </div>
+        <div className="flex items-center justify-end px-4">
           <div className="flex w-full items-center gap-8 lg:w-fit">
             <div className="hidden items-center gap-2 lg:flex">
               <Label htmlFor="rows-per-page" className="text-sm font-medium">

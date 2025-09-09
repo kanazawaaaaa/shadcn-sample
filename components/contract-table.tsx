@@ -28,6 +28,7 @@ import {
   IconChevronsRight,
   IconCircleCheckFilled,
   IconDotsVertical,
+  IconDownload,
   IconGripVertical,
   IconLayoutColumns,
   IconLoader,
@@ -410,6 +411,10 @@ export function DataTable({
 
         {/* Add Section ボタンを右側に配置 */}
         <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm">
+            <IconDownload />
+            <span className="hidden lg:inline">ダウンロード</span>
+          </Button>
           <Button size="sm">
             <IconPlus />
             <span className="hidden lg:inline">新規契約作成</span>

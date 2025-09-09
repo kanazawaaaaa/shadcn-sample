@@ -348,10 +348,6 @@ export function DataTable({
       
       {/* フィルターセクション */}
       <div className="flex items-center gap-4 px-4 lg:px-6">
-        <div className="flex items-center gap-2">
-          <Label className="text-sm font-medium">フィルター:</Label>
-        </div>
-        
         {/* 契約種別フィルター */}
         <Select
           value={(table.getColumn("type")?.getFilterValue() as string) ?? ""}

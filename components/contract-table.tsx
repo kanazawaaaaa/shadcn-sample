@@ -125,7 +125,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
       return (
         <div className="pl-4">
           <a 
-            href="#" 
+            href="/contract/detail" 
             className="text-foreground hover:text-primary hover:underline font-medium"
           >
             {row.original.title}
@@ -238,11 +238,10 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem>Edit</DropdownMenuItem>
-          <DropdownMenuItem>Make a copy</DropdownMenuItem>
-          <DropdownMenuItem>Favorite</DropdownMenuItem>
+          <DropdownMenuItem>編集</DropdownMenuItem>
+          <DropdownMenuItem>複製</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+          <DropdownMenuItem variant="destructive">アーカイブ</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     ),

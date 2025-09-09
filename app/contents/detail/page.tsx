@@ -67,7 +67,14 @@ export default function Page() {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold">バラエティ E</h2>
                 
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <Tabs defaultValue="basic-info" className="w-full">
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="basic-info">基本情報</TabsTrigger>
+                    <TabsTrigger value="cast">キャスト表</TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="basic-info" className="space-y-6">
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">放送・配信日</label>
                     <input 
@@ -314,6 +321,17 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
+              </TabsContent>
+              
+              <TabsContent value="cast" className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">キャスト表</h3>
+                  <div className="text-center text-muted-foreground py-8">
+                    <p>キャスト情報はまだ登録されていません。</p>
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
               </div>
             </div>
           </div>

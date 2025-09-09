@@ -334,6 +334,7 @@ export function DataTable({
 
   return (
     <div className="w-full flex-col justify-start space-y-6">
+
       <div className="flex items-center justify-between px-4 lg:px-6">
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm">
@@ -342,6 +343,82 @@ export function DataTable({
           </Button>
         </div>
       </div>
+      
+      {/* フィルターセクション */}
+      <div className="flex items-center gap-4 px-4 lg:px-6">
+        <div className="flex items-center gap-2">
+          <Label className="text-sm font-medium">フィルター:</Label>
+        </div>
+        
+        {/* 契約種別フィルター */}
+        <Select
+          value={(table.getColumn("type")?.getFilterValue() as string) ?? ""}
+          onValueChange={(value) =>
+            table.getColumn("type")?.setFilterValue(value === "all" ? "" : value)
+          }
+        >
+          <SelectTrigger className="w-36" size="sm">
+            <SelectValue placeholder="契約種別" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">すべて</SelectItem>
+            <SelectItem value="原作者">原作者</SelectItem>
+            <SelectItem value="実演家">実演家</SelectItem>
+            <SelectItem value="脚本家">脚本家</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {/* ステータスフィルター */}
+        <Select
+          value={(table.getColumn("status")?.getFilterValue() as string) ?? ""}
+          onValueChange={(value) =>
+            table.getColumn("status")?.setFilterValue(value === "all" ? "" : value)
+          }
+        >
+          <SelectTrigger className="w-36" size="sm">
+            <SelectValue placeholder="ステータス" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">すべて</SelectItem>
+            <SelectItem value="コンサル中">コンサル中</SelectItem>
+            <SelectItem value="承認待ち">承認待ち</SelectItem>
+            <SelectItem value="締結済">締結済</SelectItem>
+            <SelectItem value="TAM登録済">TAM登録済</SelectItem>
+            <SelectItem value="作成中">作成中</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {/* 担当部署フィルター */}
+        <Select
+          value={(table.getColumn("department")?.getFilterValue() as string) ?? ""}
+          onValueChange={(value) =>
+            table.getColumn("department")?.setFilterValue(value === "all" ? "" : value)
+          }
+        >
+          <SelectTrigger className="w-36" size="sm">
+            <SelectValue placeholder="担当部署" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">すべて</SelectItem>
+            <SelectItem value="ライツ部">ライツ部</SelectItem>
+            <SelectItem value="権利情報デスク">権利情報デスク</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {/* フィルタークリアボタン */}
+        <Button 
+          variant="outline" 
+          size="sm"
+          onClick={() => {
+            table.getColumn("type")?.setFilterValue("")
+            table.getColumn("status")?.setFilterValue("")
+            table.getColumn("department")?.setFilterValue("")
+          }}
+        >
+          クリア
+        </Button>
+      </div>
+
       <div className="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6">
         <div className="overflow-hidden rounded-lg border">
           <DndContext

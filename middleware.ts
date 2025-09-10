@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 const BASIC_USER = 'ntv'
-const BASIC_PASS = 'wands'
+const BASIC_PASS = 'wands20250910'
 
 export const config = { matcher: '/:path*' } // 全ページ対象
 export function middleware(req: NextRequest) {

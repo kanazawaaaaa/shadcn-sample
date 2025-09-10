@@ -59,7 +59,7 @@ const data = {
     },
     {
       title: "販売",
-      url: "#",
+      url: "/sales",
       icon: IconPackages,
     },
     {

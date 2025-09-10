@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
   Table,
   TableBody,
@@ -42,6 +43,7 @@ interface CastMember {
   計: string
   Hulu出演料?: string
   Huluランク?: string
+  許諾契約: string
 }
 
 interface CastTableProps {
@@ -73,7 +75,8 @@ const sampleCastData: CastMember[] = [
       "#9": "○",
       "#10": "○"
     },
-    計: "10"
+    計: "10",
+    許諾契約: "許諾済み"
   },
   {
     番号: "002",
@@ -98,7 +101,8 @@ const sampleCastData: CastMember[] = [
       "#9": "○",
       "#10": "○"
     },
-    計: "10"
+    計: "10",
+    許諾契約: "許諾済み"
   },
   {
     番号: "003",
@@ -123,7 +127,8 @@ const sampleCastData: CastMember[] = [
       "#9": "○",
       "#10": "○"
     },
-    計: "10"
+    計: "10",
+    許諾契約: "未作成"
   }
 ]
 
@@ -169,6 +174,7 @@ export function CastTable({ data = sampleCastData }: CastTableProps) {
                     <TableHead className="min-w-[120px]">出演話</TableHead>
                     <TableHead className="text-center">話数詳細</TableHead>
                     <TableHead className="w-16 text-center">計</TableHead>
+                    <TableHead className="min-w-[120px] text-center">許諾契約</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -214,6 +220,19 @@ export function CastTable({ data = sampleCastData }: CastTableProps) {
                       </TableCell>
                       <TableCell className="text-center font-mono font-medium">
                         {cast.計}
+                      </TableCell>
+                      <TableCell className="text-center">
+                        {cast.許諾契約 === "未作成" ? (
+                          <Link href="/contract/detail">
+                            <Button variant="outline" size="sm">
+                              許諾契約を作成する
+                            </Button>
+                          </Link>
+                        ) : (
+                          <Badge variant="default" className="text-xs">
+                            {cast.許諾契約}
+                          </Badge>
+                        )}
                       </TableCell>
                     </TableRow>
                   ))}

@@ -29,6 +29,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { CastTable } from "@/components/cast-table"
 
 export default function Page() {
   return (
@@ -404,9 +405,9 @@ export default function Page() {
                 ※ 連携システムから自動で取得される想定。<br />
               </TabsContent>
               
-              <TabsContent value="cast" className="space-y-6 pt-6">
-                キャスト情報
-              </TabsContent>
+                <TabsContent value="cast" className="space-y-6 pt-6">
+                  <CastTable />
+                </TabsContent>
             </Tabs>
               </div>
             </div>

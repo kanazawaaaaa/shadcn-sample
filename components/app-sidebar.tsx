@@ -69,7 +69,7 @@ const data = {
     },
     {
       title: "配信実績",
-      url: "#",
+      url: "/dashboard",
       icon: IconChartBar,
     },
     {

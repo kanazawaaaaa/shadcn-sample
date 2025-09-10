@@ -13,6 +13,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { MytaskTable1 } from "@/components/mytask-table1"
+import { MytaskTable2 } from "@/components/mytask-table2"
+import { MytaskTable3 } from "@/components/mytask-table3"
 
 export default function Page() {
   return (
@@ -45,7 +49,34 @@ export default function Page() {
         <div className="flex flex-1 flex-col">
           <div className="@container/main flex flex-1 flex-col gap-2">
             <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 px-4 lg:px-6">
-              マイタスク一覧
+              <div>
+                <h1 className="text-2xl font-bold">マイタスク一覧</h1>
+              </div>
+              <Tabs defaultValue="a" className="w-full">
+                <TabsList className="grid w-full grid-cols-3">
+                  <TabsTrigger value="a">契約関係の承認者の場合</TabsTrigger>
+                  <TabsTrigger value="b">制作の場合</TabsTrigger>
+                  <TabsTrigger value="c">権利情報デスクの場合</TabsTrigger>
+                </TabsList>
+                <TabsContent value="a" className="mt-4">
+                  <div className="space-y-4">
+                    <p>※ 前のタスク（契約書の作成であったり、申請だったり）が完了すると自動的に次のタスクが作成されます。</p>
+                    <MytaskTable1 />
+                  </div>
+                </TabsContent>
+                <TabsContent value="b" className="mt-4">
+                  <div className="space-y-4">
+                    <p>※ 作成日から一定期間を過ぎたタスクは強調表示されると共に、催促の通知が自動的に送信されます。</p>
+                    <MytaskTable2 />
+                  </div>
+                </TabsContent>
+                <TabsContent value="c" className="mt-4">
+                  <div className="space-y-4">
+                    <h2 className="text-lg font-semibold">Cの場合のタスク</h2>
+                    <MytaskTable3 />
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
           </div>
         </div>

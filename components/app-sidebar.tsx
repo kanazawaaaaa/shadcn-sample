@@ -8,7 +8,7 @@ import {
   IconDatabase,
   IconFileAi,
   IconFileDescription,
-  IconFileWord,
+  IconPackages,
   IconFolder,
   IconHelp,
   IconInnerShadowTop,
@@ -18,6 +18,7 @@ import {
   IconSettings,
   IconUsers,
   IconListCheck,
+  IconEye,
 } from "@tabler/icons-react"
 
 import { NavDocuments } from "@/components/nav-documents"
@@ -59,7 +60,7 @@ const data = {
     {
       title: "販売",
       url: "#",
-      icon: IconDashboard,
+      icon: IconPackages,
     },
     {
       title: "申請",
@@ -147,6 +148,11 @@ const data = {
       name: "権限",
       url: "#",
       icon: IconReport,
+    },
+    {
+      name: "承認フロー",
+      url: "#",
+      icon: IconEye,
     },
   ],
 }

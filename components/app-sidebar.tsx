@@ -74,7 +74,7 @@ const data = {
     },
     {
       title: "検索",
-      url: "#",
+      url: "/search",
       icon: IconSearch,
     },
   ],

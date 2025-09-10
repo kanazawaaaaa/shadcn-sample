@@ -64,7 +64,7 @@ const data = {
     },
     {
       title: "申請",
-      url: "#",
+      url: "/application",
       icon: IconFolder,
     },
     {

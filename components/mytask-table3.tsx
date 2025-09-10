@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
 
 // CSVデータから生成したタスクの型定義
 type Task = {
@@ -24,14 +25,14 @@ const tasks: Task[] = [
   {
     id: "1",
     content: "バラエティ「真夜中のバラエティ」実演家契約",
-    taskType: "締結",
+    taskType: "内容確認",
     assignee: "横山健太",
     createdDate: "3日前"
   },
   {
     id: "2", 
     content: "ドラマ「未来への道」脚本家契約",
-    taskType: "締結",
+    taskType: "内容確認",
     assignee: "権利情報デスク",
     createdDate: "1日前"
   }
@@ -79,7 +80,9 @@ export function MytaskTable3() {
               tasks.map((task) => (
                 <TableRow key={task.id}>
                   <TableCell className="font-medium">
-                    {task.content}
+                    <Link href="/contract/detail" className="hover:underline">
+                      {task.content}
+                    </Link>
                   </TableCell>
                   <TableCell>
                     <Badge variant={getTaskTypeBadgeVariant(task.taskType)}>

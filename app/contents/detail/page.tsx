@@ -401,7 +401,7 @@ export default function Page() {
               </TabsContent>
               
               <TabsContent value="meta-info" className="space-y-6 pt-6">
-                メタ情報
+                ※ 連携システムから自動で取得される想定。<br />
               </TabsContent>
               
               <TabsContent value="cast" className="space-y-6 pt-6">

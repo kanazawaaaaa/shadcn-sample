@@ -72,7 +72,7 @@ export default function Page() {
                 </TabsContent>
                 <TabsContent value="c" className="mt-4">
                   <div className="space-y-4">
-                    <h2 className="text-lg font-semibold">Cの場合のタスク</h2>
+                    <p>※ システム外とのやりとりもタスク化することで、完了後の後続タスクの自動作成が可能になります。</p>
                     <MytaskTable3 />
                   </div>
                 </TabsContent>

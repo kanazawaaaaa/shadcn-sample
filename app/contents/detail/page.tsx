@@ -33,9 +33,9 @@ import {
 } from "@/components/ui/breadcrumb"
 import { CastTable } from "@/components/cast-table"
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 
-export default function Page() {
+function ContentDetailPage() {
   const searchParams = useSearchParams()
   const [activeTab, setActiveTab] = useState('basic-info')
 
@@ -432,5 +432,13 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
+  )
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContentDetailPage />
+    </Suspense>
   )
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import { AppSidebar } from "@/components/app-sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
@@ -30,8 +32,23 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { CastTable } from "@/components/cast-table"
+import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Page() {
+  const searchParams = useSearchParams()
+  const [activeTab, setActiveTab] = useState('basic-info')
+
+  useEffect(() => {
+    const tab = searchParams.get('tab')
+    if (tab === 'cast') {
+      setActiveTab('cast')
+    } else if (tab === 'meta-info') {
+      setActiveTab('meta-info')
+    } else {
+      setActiveTab('basic-info')
+    }
+  }, [searchParams])
   return (
     <SidebarProvider
       style={
@@ -69,7 +86,7 @@ export default function Page() {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold">バラエティ E</h2>
                 
-                <Tabs defaultValue="basic-info" className="w-full">
+                <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                   <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="basic-info">基本情報</TabsTrigger>
                     <TabsTrigger value="meta-info">メタ情報</TabsTrigger>

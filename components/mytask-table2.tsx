@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
 
 // CSVデータから生成したタスクの型定義
 type Task = {
@@ -101,7 +102,9 @@ export function MytaskTable2() {
               tasks.map((task) => (
                 <TableRow key={task.id}>
                   <TableCell className="font-medium">
-                    {task.content}
+                    <Link href="/contents/detail?tab=cast" className="hover:underline">
+                      {task.content}
+                    </Link>
                   </TableCell>
                   <TableCell>
                     <Badge variant={getTaskTypeBadgeVariant(task.taskType)}>

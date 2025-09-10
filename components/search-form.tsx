@@ -85,11 +85,11 @@ export function SearchForm() {
     if (searchType === 'ai') {
       console.log("AI検索を実行:", formData.aiQuery)
       // TODO: AI検索の実装
-      alert(`AI検索を実行します: "${formData.aiQuery}"`)
+      alert(`AI検索を実行します: ${formData.aiQuery}`)
     } else {
       console.log("フリーワード検索を実行:", formData.freeword)
       // TODO: フリーワード検索の実装
-      alert(`フリーワード検索を実行します: "${formData.freeword}"`)
+      alert(`フリーワード検索を実行します: ${formData.freeword}`)
     }
   }
 
@@ -189,7 +189,7 @@ export function SearchForm() {
                 <div className="space-y-3">
                   <Textarea
                     id="aiSearchInput"
-                    placeholder="例：「田中太郎が出演している2023年のドラマで、Netflixで配信されているもの」、「予算が1000万円以上の映画契約で、海外配信権が含まれているもの」など"
+                    placeholder="例：&ldquo;田中太郎が出演している2023年のドラマで、Netflixで配信されているもの&rdquo;、&ldquo;予算が1000万円以上の映画契約で、海外配信権が含まれているもの&rdquo;など"
                     value={formData.aiQuery}
                     onChange={(e) => handleInputChange("aiQuery", e.target.value)}
                     className="min-h-[100px] resize-none"
@@ -212,9 +212,9 @@ export function SearchForm() {
                 <div className="mt-4 p-4 bg-muted/30 rounded-md">
                   <p className="text-sm font-medium mb-2">検索例：</p>
                   <div className="space-y-2 text-xs text-muted-foreground">
-                    <p>• "山田花子が脚本を担当したアニメ作品で、2022年以降に放送されたもの"</p>
-                    <p>• "配信期間が今年中に終了する契約で、海外展開が含まれているもの"</p>
-                    <p>• "予算5000万円以上のバラエティ番組の制作契約"</p>
+                    <p>• &ldquo;山田花子が脚本を担当したアニメ作品で、2022年以降に放送されたもの&rdquo;</p>
+                    <p>• &ldquo;配信期間が今年中に終了する契約で、海外展開が含まれているもの&rdquo;</p>
+                    <p>• &ldquo;予算5000万円以上のバラエティ番組の制作契約&rdquo;</p>
                   </div>
                 </div>
               </div>
